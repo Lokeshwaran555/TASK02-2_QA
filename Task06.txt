@@ -1,0 +1,30 @@
+it('file upload', function(){
+
+    cy.visit('https://dev.devmobo.com/login')
+    cy.get('#email').type('lokzz05000@gmail.com')
+    cy.get('#password').type('Lokesh@52510')
+    cy.get('#loginButton').click()
+    cy.get(':nth-child(8) > .nav-link').click()
+    cy.get('.btn-primary').click()
+    cy.get(':nth-child(3) > .form-control').type('Ironman')
+    cy.get(':nth-child(8) > .btn-primary').click()
+    cy.get('.modal-body > div > .btn-primary').click()
+    cy.get('#newVendorEmail').type('lokeshwaran2361@gmail.com')
+    cy.get('.modal-body > .btn-primary').click()
+    cy.get(':nth-child(10) > .jobButton').click()
+    cy.get('.form-control').type('Hello sir, I am sai')
+    const filepath = 'application/HOA2.pdf'
+        cy.contains('PDF').click()
+        cy.get('#inputPDFFile').attachFile(filepath)
+        cy.get('[style="text-align: right; margin-top: 25px;"] > .btn-primary').click()
+        cy.get('.form-control').type('abc@gmail.com')
+        cy.get('[style="text-align: right; margin-top: 25px;"] > .btn-primary').click()
+        cy.get('[style="text-align: right; float: right; width: 60%;"] > .btn-primary').click()
+   
+        
+
+   
+    
+
+
+})
